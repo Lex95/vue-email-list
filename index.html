@@ -10,7 +10,10 @@
 </head>
 <body>
     <main id="app">
-        
+        <button @click="generateEmailList(10)">Genera Mail</button>
+        <ul>
+            <li v-for="mail in mailList">{{mail}}</li>
+        </ul>
     </main>
     <script src="script.js"></script>
 </body>

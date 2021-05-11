@@ -1,15 +1,19 @@
 const app = new Vue({
     el: "#app",
     data: {
-
+        mailList: [],
+        loading: false
     },
     methods: {
         generateEmail() {
-            const result;
-            axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(function(response) {
-                result = response.data;
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) => {
+                this.mailList.push(resp.data.response);
             });
-            return result;
+        },
+        generateEmailList(num) {
+            for (let i = 0; i < num; i++) {
+                this.generateEmail();
+            }
         }
     }
 })

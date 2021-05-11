@@ -2,7 +2,6 @@ const app = new Vue({
     el: "#app",
     data: {
         mailList: [],
-        loading: false
     },
     methods: {
         generateEmail() {
@@ -11,6 +10,7 @@ const app = new Vue({
             });
         },
         generateEmailList(num) {
+            this.mailList = [];
             for (let i = 0; i < num; i++) {
                 this.generateEmail();
             }

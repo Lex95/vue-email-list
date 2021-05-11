@@ -11,9 +11,11 @@
 <body>
     <main id="app">
         <button @click="generateEmailList(10)">Genera Mail</button>
-        <ul>
+        <ul v-if="this.mailList.length == 10">
             <li v-for="mail in mailList">{{mail}}</li>
         </ul>
+        <p v-else-if="this.mailList.length > 0">Caricamento...</p>
+        <p v-else></p>
     </main>
     <script src="script.js"></script>
 </body>
